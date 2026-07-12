@@ -1,24 +1,49 @@
-# Roommate Matching Script 🏠🤖
+# 🏠 Sistema di Matching Coinquilini
 
-Un algoritmo in Python progettato per automatizzare e ottimizzare il processo di matching tra coinquilini, riducendo i tempi di selezione e massimizzando la compatibilità basata su preferenze ed esigenze specifiche.
+## Descrizione
 
-## 🚀 Funzionalità Chiave
+Questo progetto implementa un sistema di **matching tra coinquilini** basato sulla compatibilità delle preferenze personali.
 
-*   **Data-Driven Matching:** Calcolo del punteggio di compatibilità basato su variabili chiave (es. budget, abitudini, stile di vita).
-*   **Ordinamento Efficiente:** Generazione di una classifica dei profili più affini per ciascun utente.
-*   **Architettura Scalabile:** Struttura del codice flessibile, pronta per l'integrazione con database (SQL/NoSQL) o API esterne.
+L'obiettivo è simulare un algoritmo che, attraverso un questionario iniziale, confronta le caratteristiche di un nuovo utente con diversi profili già presenti e restituisce una classifica dei candidati più compatibili.
 
-## 🛠️ Stack Tecnologico e Metodologia
+Il progetto è stato sviluppato per esercitarsi con:
+- programmazione ad oggetti (OOP)
+- gestione di classi e oggetti
+- strutture dati Python
+- logica di confronto e scoring
+- gestione degli input utente
 
-*   **Linguaggio:** Python 3.x
-*   **Librerie Principali:** `pandas` (gestione e manipolazione dati), `scikit-learn` o algoritmi custom di pesatura (calcolo delle distanze/compatibilità).
-*   **Approccio:** Sviluppo guidato da logiche di efficienza operativa e automazione dei processi di screening.
+---
 
-## 📂 Struttura del Progetto
+## Funzionamento
 
-```text
-├── main.py              # Entry point dello script
-├── matching_engine.py   # Core logic e algoritmi di matching
-├── data/                # Dataset di test (es. utenti, preferenze)
-│   └── roommates.csv
-└── README.md            # Documentazione del progetto
+Il programma raccoglie le preferenze dell'utente attraverso un questionario composto da 8 criteri:
+
+- Ordine
+- Rumore
+- Animali domestici
+- Feste
+- Fumatore
+- Orari
+- Cucina
+- Pulizia
+
+Per ogni criterio l'utente può scegliere:
+
+| Valore | Significato |
+|---|---|
+| F | Favorevole |
+| S | Sfavorevole |
+| I | Indifferente |
+
+Dopo la compilazione, il sistema confronta il profilo dell'utente con gli altri coinquilini disponibili e calcola una percentuale di compatibilità.
+
+---
+
+## Logica di Matching
+
+Il confronto tra due persone avviene criterio per criterio:
+
+- ✅ **Pro**: preferenze uguali tra i due profili
+- ❌ **Contro**: preferenze differenti
+- ➖ **Neutri**: almeno una delle due persone è indifferente
